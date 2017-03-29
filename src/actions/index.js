@@ -1,12 +1,12 @@
-export const increase = () => {
+export const decrease = () => {
   return {
-    type: 'INCREASE'
+    type: 'DECREASE'
   };
 };
 
 
-export const decrease = () => {
+export const increase = () => {
   return {
-    type: 'DECREASE'
+    type: 'INCREASE'
   };
 };
