@@ -1,4 +1,6 @@
-const counterApp = (state = 0, action) => {
+import { combineReducers } from 'redux';
+
+const count = (state = 0, action) => {
   switch (action.type) {
     case 'DECREASE':
       return state - 1;
@@ -9,4 +11,21 @@ const counterApp = (state = 0, action) => {
   }
 };
 
-export default counterApp;
+const notification = (state = 'hide', action) => {
+  // console.log('reducer', action.type);
+  switch (action.type) {
+    case 'SHOW_NOTIFICATION':
+      console.log('reducer show');
+      return 'show';
+    case 'HIDE_NOTIFICATION':
+      console.log('reducer hide');
+      return 'hide';
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  count,
+  notification,
+});
